@@ -184,3 +184,165 @@ Every keyword behaved exactly as expected — positive keywords pushed the poste
 - Computation of all probabilities
 - Jupyter notebook and visualisation
 - This README
+  
+
+# Part 3: Gradient Descent Manual Calculation
+### ML Formative 3 | Assigned to: Gakwaya Ineza Ketia
+
+---
+
+## Overview
+
+This section demonstrates the manual implementation of the **Gradient Descent** optimization algorithm for a multiple linear regression model. The objective was to iteratively update the model parameters (**m** and **b**) using the gradients of the **Mean Squared Error (MSE)** cost function. All calculations were performed manually using **matrix multiplication**, without relying on machine learning libraries.
+
+---
+
+## Problem Statement
+
+The regression model is defined as:
+
+\[
+y = m_1x_1 + m_2x_2 + b
+\]
+
+### Initial Parameters
+
+- **m = [-1, 2]**
+- **b = [1, 1]**
+
+### Dataset
+
+| x₁ | x₂ | y |
+|----|----|---|
+| 1 | 3 | 5 |
+| 4 | 10 | 6 |
+
+---
+
+## Objective
+
+The following tasks were completed:
+
+- Computed the predicted values (ŷ) using the initial parameters.
+- Calculated the Mean Squared Error (MSE).
+- Derived the gradients of the cost function with respect to **m** and **b**.
+- Updated the parameters using the Gradient Descent update rule.
+- Repeated the process for **four iterations**, recording all intermediate calculations after every update.
+
+---
+
+## Mathematical Foundation
+
+### Prediction
+
+\[
+\hat{y} = Xm + b
+\]
+
+where:
+
+- **X** is the feature matrix
+- **m** is the weight vector
+- **b** is the bias vector
+
+---
+
+### Mean Squared Error (MSE)
+
+\[
+J(m,b)=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
+\]
+
+The MSE measures how far the predicted values are from the actual target values.
+
+---
+
+### Gradient Descent Update Rule
+
+The parameters are updated after each iteration using:
+
+\[
+m = m - \alpha \frac{\partial J}{\partial m}
+\]
+
+\[
+b = b - \alpha \frac{\partial J}{\partial b}
+\]
+
+where:
+
+- **α** is the learning rate
+- **∂J/∂m** is the gradient with respect to the weights
+- **∂J/∂b** is the gradient with respect to the bias
+
+---
+
+## Results
+
+Four manual Gradient Descent iterations were successfully completed. During each iteration:
+
+- Predictions were computed.
+- Errors between predicted and actual values were determined.
+- Gradients were calculated using matrix operations.
+- The parameters **m** and **b** were updated using the Gradient Descent formula.
+- The new cost value was evaluated after every update.
+
+The calculations showed a consistent reduction in the cost function across the iterations, indicating that the model parameters were moving toward values that better fit the training data.
+
+---
+
+## Observation
+
+The behaviour of the algorithm demonstrated the expected characteristics of Gradient Descent:
+
+- The values of **m** and **b** gradually changed after every iteration.
+- Prediction errors became smaller as the parameters were updated.
+- The Mean Squared Error continuously decreased, showing that each update improved the model.
+- The optimization process moved steadily toward convergence.
+
+This confirms that Gradient Descent effectively minimizes prediction error by adjusting the model parameters in the direction of the negative gradient.
+
+---
+
+## File Structure
+
+```text
+ML Formative 3/
+├── Part3_Gradient_Descent.pdf
+├── Part3_Gradient_Descent.ipynb
+├── Manual Calculations.pdf
+└── README_Part3.md
+```
+
+---
+
+## Implementation Details
+
+The implementation included:
+
+- Manual matrix multiplication for predictions
+- Manual derivation of gradients
+- Manual parameter updates
+- Four complete Gradient Descent iterations
+- Step-by-step calculations with intermediate results
+
+No machine learning libraries were used during the calculations.
+
+---
+
+## Conclusion
+
+The manual implementation provided a clear understanding of how Gradient Descent optimizes a multiple linear regression model. By repeatedly computing gradients and updating the parameters, the algorithm progressively reduced the prediction error and minimized the Mean Squared Error. The results confirmed that Gradient Descent is an effective optimization technique for training linear regression models.
+
+---
+
+## Contribution
+
+**Gakwaya Ineza Ketia** — Responsible for Part 3:
+
+- Manual calculation of predicted values
+- Derivation of MSE gradients
+- Manual Gradient Descent parameter updates
+- Completion of four Gradient Descent iterations
+- Analysis of parameter convergence and cost reduction
+- Documentation and README preparation
