@@ -2,7 +2,9 @@
 Part 4: Gradient Descent in Code
 ---------------------------------
 This converts the manual (Part 3) calculations into working Python code.
-
+Data, starting m/b, and learning rate are the SAME as the manual calc,
+so you can print this out next to your handwritten pages and show they match.
+"""
 
 import numpy as np
 from scipy.optimize import approx_fprime
