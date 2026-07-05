@@ -336,6 +336,65 @@ The manual implementation provided a clear understanding of how Gradient Descent
 
 ---
 
+
+# Part 4 — Gradient Descent in Code
+
+What this is
+
+This converts the Part 3 manual gradient descent calculations into working Python code, using SciPy and Matplotlib as required.
+
+Files
+
+
+Part4_Gradient_Descent.ipynb — Jupyter notebook (recommended). Already run once, so outputs and plots show immediately on open. Can also be re-run live during the presentation.
+part4_gradient_descent.py — same code as a plain Python script.
+
+
+How to run
+
+Option A — Jupyter / Google Colab (recommended)
+
+
+Go to https://colab.research.google.com
+File → Upload notebook → select Part4_Gradient_Descent.ipynb
+Run cells top to bottom (Shift + Enter on each), or just view the saved outputs.
+
+
+Option B — Local Python
+
+pip install numpy scipy matplotlib
+python part4_gradient_descent.py
+
+What the code does
+
+
+Starts from the same data, m, b, and learning rate (0.01) used in Part 3.
+Defines the Mean Squared Error cost function.
+Uses scipy.optimize.approx_fprime to compute the derivative of that cost function with respect to m and b — the SciPy requirement for this part.
+Also computes the same gradient analytically (by hand-derived formula) and prints both side by side to show they match.
+Updates m and b using gradient descent, once per iteration, in matrix form — every intermediate value (y_hat, error, MSE, gradient) is printed, nothing is hidden inside one function call.
+Runs 4 iterations — one per group member.
+Computes final predictions using the final m and b.
+Plots:
+
+m and b values across iterations
+MSE (error) across iterations
+
+
+
+
+
+Result summary
+
+IterationmbMSE0 (init)[-1.00, 2.00][1.00, 1.00]61.001[-1.45, 0.87][0.99, 0.89]6.502[-1.33, 1.18][1.02, 0.91]2.503[-1.37, 1.10][1.04, 0.90]2.164[-1.36, 1.12][1.06, 0.89]2.10
+
+Error drops sharply after the first iteration, then keeps decreasing but flattens out. Both m and b move steadily in the direction that reduces error, confirming gradient descent is working — it slows down as it approaches a minimum, which is expected with a fixed learning rate.
+
+Contribution
+
+Part 4 (this notebook/script) completed by: Loice Teta
+
+
 ## Contribution
 
 **Gakwaya Ineza Ketia** — Responsible for Part 3:
