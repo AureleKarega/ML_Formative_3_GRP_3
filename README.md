@@ -299,6 +299,53 @@ The manual implementation demonstrated how Gradient Descent optimizes a multiple
 
 ---
 
+# Part 4 — Gradient Descent in Code
+
+## What this is
+This converts the Part 3 manual gradient descent calculations into working Python code, using SciPy and Matplotlib as required.
+
+## Files
+- `Part4_Gradient_Descent.ipynb` — Jupyter notebook (recommended). Already run once, so outputs and plots show immediately on open. Can also be re-run live during the presentation.
+- `part4_gradient_descent.py` — same code as a plain Python script.
+
+## How to run
+**Option A — Jupyter / Google Colab (recommended)**
+1. Go to https://colab.research.google.com
+2. File → Upload notebook → select `Part4_Gradient_Descent.ipynb`
+3. Run cells top to bottom (Shift + Enter on each), or just view the saved outputs.
+
+**Option B — Local Python**
+```
+pip install numpy scipy matplotlib
+python part4_gradient_descent.py
+```
+
+## What the code does
+1. Starts from the same data, `m`, `b`, and learning rate (0.01) used in Part 3.
+2. Defines the Mean Squared Error cost function.
+3. Uses `scipy.optimize.approx_fprime` to compute the derivative of that cost function with respect to `m` and `b` — the SciPy requirement for this part.
+4. Also computes the same gradient analytically (by hand-derived formula) and prints both side by side to show they match.
+5. Updates `m` and `b` using gradient descent, once per iteration, in matrix form — every intermediate value (`y_hat`, error, MSE, gradient) is printed, nothing is hidden inside one function call.
+6. Runs 4 iterations — one per group member.
+7. Computes final predictions using the final `m` and `b`.
+8. Plots:
+   - `m` and `b` values across iterations
+   - MSE (error) across iterations
+
+## Result summary
+
+| Iteration | m | b | MSE |
+|---|---|---|---|
+| 0 (init) | [-1.00, 2.00] | [1.00, 1.00] | 61.00 |
+| 1 | [-1.45, 0.87] | [0.99, 0.89] | 6.50 |
+| 2 | [-1.33, 1.18] | [1.02, 0.91] | 2.50 |
+| 3 | [-1.37, 1.10] | [1.04, 0.90] | 2.16 |
+| 4 | [-1.36, 1.12] | [1.06, 0.89] | 2.10 |
+
+Error drops sharply after the first iteration, then keeps decreasing but flattens out. Both `m` and `b` move steadily in the direction that reduces error, confirming gradient descent is working — it slows down as it approaches a minimum, which is expected with a fixed learning rate.
+
+## Contribution
+Part 4 (this notebook/script) completed by: **Loice Teta**
 ## Contribution
 
 **Gakwaya Ineza Ketia** — Responsible for Part 3:
