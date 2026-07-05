@@ -184,7 +184,6 @@ Every keyword behaved exactly as expected — positive keywords pushed the poste
 - Computation of all probabilities
 - Jupyter notebook and visualisation
 - This README
-  
 
 # Part 3: Gradient Descent Manual Calculation
 ### ML Formative 3 | Assigned to: Gakwaya Ineza Ketia
@@ -193,17 +192,17 @@ Every keyword behaved exactly as expected — positive keywords pushed the poste
 
 ## Overview
 
-This section demonstrates the manual implementation of the **Gradient Descent** optimization algorithm for a multiple linear regression model. The objective was to iteratively update the model parameters (**m** and **b**) using the gradients of the **Mean Squared Error (MSE)** cost function. All calculations were performed manually using **matrix multiplication**, without relying on machine learning libraries.
+This section demonstrates the manual implementation of the **Gradient Descent** optimization algorithm for a multiple linear regression model. The objective was to iteratively update the model parameters (**m** and **b**) by minimizing the **Mean Squared Error (MSE)** cost function. All calculations were performed manually using **matrix multiplication**, following the instructions provided in the assignment.
 
 ---
 
 ## Problem Statement
 
-The regression model is defined as:
+The linear regression model is defined as:
 
-\[
-y = m_1x_1 + m_2x_2 + b
-\]
+$begin:math:display$
+y \= m\_1x\_1 \+ m\_2x\_2 \+ b
+$end:math:display$
 
 ### Initial Parameters
 
@@ -223,11 +222,11 @@ y = m_1x_1 + m_2x_2 + b
 
 The following tasks were completed:
 
-- Computed the predicted values (ŷ) using the initial parameters.
-- Calculated the Mean Squared Error (MSE).
-- Derived the gradients of the cost function with respect to **m** and **b**.
-- Updated the parameters using the Gradient Descent update rule.
-- Repeated the process for **four iterations**, recording all intermediate calculations after every update.
+- Computed the predicted values (ŷ) using the initial values of **m** and **b**.
+- Derived the gradients of the Mean Squared Error (MSE) cost function with respect to **m** and **b**.
+- Performed four manual Gradient Descent iterations using matrix multiplication.
+- Updated the model parameters after each iteration.
+- Recorded all intermediate calculations, including predictions, errors, gradients, updated parameters, and cost values.
 
 ---
 
@@ -235,173 +234,78 @@ The following tasks were completed:
 
 ### Prediction
 
-\[
-\hat{y} = Xm + b
-\]
-
-where:
-
-- **X** is the feature matrix
-- **m** is the weight vector
-- **b** is the bias vector
-
----
+$begin:math:display$
+\\hat\{y\}\=Xm\+b
+$end:math:display$
 
 ### Mean Squared Error (MSE)
 
-\[
-J(m,b)=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
-\]
-
-The MSE measures how far the predicted values are from the actual target values.
-
----
+$begin:math:display$
+J\(m\,b\)\=\\frac\{1\}\{n\}\\sum\_\{i\=1\}\^\{n\}\(y\_i\-\\hat\{y\}\_i\)\^2
+$end:math:display$
 
 ### Gradient Descent Update Rule
 
-The parameters are updated after each iteration using:
+$begin:math:display$
+m\=m\-\\alpha\\frac\{\\partial J\}\{\\partial m\}
+$end:math:display$
 
-\[
-m = m - \alpha \frac{\partial J}{\partial m}
-\]
+$begin:math:display$
+b\=b\-\\alpha\\frac\{\\partial J\}\{\\partial b\}
+$end:math:display$
 
-\[
-b = b - \alpha \frac{\partial J}{\partial b}
-\]
-
-where:
-
-- **α** is the learning rate
-- **∂J/∂m** is the gradient with respect to the weights
-- **∂J/∂b** is the gradient with respect to the bias
+where **α** represents the learning rate.
 
 ---
 
 ## Results
 
-Four manual Gradient Descent iterations were successfully completed. During each iteration:
-
-- Predictions were computed.
-- Errors between predicted and actual values were determined.
-- Gradients were calculated using matrix operations.
-- The parameters **m** and **b** were updated using the Gradient Descent formula.
-- The new cost value was evaluated after every update.
-
-The calculations showed a consistent reduction in the cost function across the iterations, indicating that the model parameters were moving toward values that better fit the training data.
+Four Gradient Descent iterations were completed successfully. During each iteration, the predictions, errors, gradients, and updated parameter values were calculated manually. After every update, the Mean Squared Error decreased, showing that the model was gradually learning and moving toward the optimal parameter values.
 
 ---
 
 ## Observation
 
-The behaviour of the algorithm demonstrated the expected characteristics of Gradient Descent:
-
-- The values of **m** and **b** gradually changed after every iteration.
-- Prediction errors became smaller as the parameters were updated.
-- The Mean Squared Error continuously decreased, showing that each update improved the model.
-- The optimization process moved steadily toward convergence.
-
-This confirms that Gradient Descent effectively minimizes prediction error by adjusting the model parameters in the direction of the negative gradient.
-
----
-
-## File Structure
-
-```text
-ML Formative 3/
-├── Part3_Gradient_Descent.pdf
-├── Part3_Gradient_Descent.ipynb
-├── Manual Calculations.pdf
-└── README_Part3.md
-```
+Throughout the iterations, both the weight vector (**m**) and bias (**b**) changed in the direction that minimized the error. The consistent decrease in the cost function demonstrated that Gradient Descent was converging correctly and improving the model's predictions with each iteration.
 
 ---
 
 ## Implementation Details
 
-The implementation included:
+### Files
 
-- Manual matrix multiplication for predictions
-- Manual derivation of gradients
-- Manual parameter updates
-- Four complete Gradient Descent iterations
-- Step-by-step calculations with intermediate results
+```text
+ML Formative 3/
+├── Part3_Gradient_Descent.ipynb
+├── Manual_Calculations.pdf
+└── README_Part3.md
+```
 
-No machine learning libraries were used during the calculations.
+### Implementation Summary
+
+- Manual matrix multiplication
+- Manual MSE gradient derivation
+- Four Gradient Descent iterations
+- Parameter updates after every iteration
+- Cost calculation after every update
+
+No machine learning libraries were used.
 
 ---
 
 ## Conclusion
 
-The manual implementation provided a clear understanding of how Gradient Descent optimizes a multiple linear regression model. By repeatedly computing gradients and updating the parameters, the algorithm progressively reduced the prediction error and minimized the Mean Squared Error. The results confirmed that Gradient Descent is an effective optimization technique for training linear regression models.
+The manual implementation demonstrated how Gradient Descent optimizes a multiple linear regression model by repeatedly calculating gradients and updating the parameters. The reduction in the Mean Squared Error across all iterations confirmed that the algorithm was successfully converging toward a better-fitting model.
 
 ---
-
-
-# Part 4 — Gradient Descent in Code
-
-What this is
-
-This converts the Part 3 manual gradient descent calculations into working Python code, using SciPy and Matplotlib as required.
-
-Files
-
-
-Part4_Gradient_Descent.ipynb — Jupyter notebook (recommended). Already run once, so outputs and plots show immediately on open. Can also be re-run live during the presentation.
-part4_gradient_descent.py — same code as a plain Python script.
-
-
-How to run
-
-Option A — Jupyter / Google Colab (recommended)
-
-
-Go to https://colab.research.google.com
-File → Upload notebook → select Part4_Gradient_Descent.ipynb
-Run cells top to bottom (Shift + Enter on each), or just view the saved outputs.
-
-
-Option B — Local Python
-
-pip install numpy scipy matplotlib
-python part4_gradient_descent.py
-
-What the code does
-
-
-Starts from the same data, m, b, and learning rate (0.01) used in Part 3.
-Defines the Mean Squared Error cost function.
-Uses scipy.optimize.approx_fprime to compute the derivative of that cost function with respect to m and b — the SciPy requirement for this part.
-Also computes the same gradient analytically (by hand-derived formula) and prints both side by side to show they match.
-Updates m and b using gradient descent, once per iteration, in matrix form — every intermediate value (y_hat, error, MSE, gradient) is printed, nothing is hidden inside one function call.
-Runs 4 iterations — one per group member.
-Computes final predictions using the final m and b.
-Plots:
-
-m and b values across iterations
-MSE (error) across iterations
-
-
-
-
-
-Result summary
-
-IterationmbMSE0 (init)[-1.00, 2.00][1.00, 1.00]61.001[-1.45, 0.87][0.99, 0.89]6.502[-1.33, 1.18][1.02, 0.91]2.503[-1.37, 1.10][1.04, 0.90]2.164[-1.36, 1.12][1.06, 0.89]2.10
-
-Error drops sharply after the first iteration, then keeps decreasing but flattens out. Both m and b move steadily in the direction that reduces error, confirming gradient descent is working — it slows down as it approaches a minimum, which is expected with a fixed learning rate.
-
-Contribution
-
-Part 4 (this notebook/script) completed by: Loice Teta
-
 
 ## Contribution
 
 **Gakwaya Ineza Ketia** — Responsible for Part 3:
 
-- Manual calculation of predicted values
-- Derivation of MSE gradients
-- Manual Gradient Descent parameter updates
-- Completion of four Gradient Descent iterations
-- Analysis of parameter convergence and cost reduction
-- Documentation and README preparation
+- Manual prediction calculations
+- Gradient derivation
+- Four Gradient Descent iterations
+- Parameter updates
+- Analysis of convergence
+- README documentation
