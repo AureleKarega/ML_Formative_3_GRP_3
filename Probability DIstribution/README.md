@@ -365,18 +365,23 @@ During presentations, the tracking table shows that the log-likelihood improves 
 
 # Optimization Tracking Table
 
-The program prints the optimization progress after every iteration.
+Iteration | mu1 | mu2 | var1 | var2 | pi1 | pi2 | LogLikelihood
+0  |  66.3  |  69.6  |  9.45  |  7.07 |  0.49 |  0.51 | -4871.94
+1  |  66.27 |  69.61 |  9.96  | 6.48  | 0.49  | 0.51  | -4868.06
+2  |  66.24 |  69.62 | 10.18  | 6.14  | 0.49  | 0.51  | -4866.64
+3  |  66.22 |  69.64 | 10.27  | 5.92  | 0.49  | 0.51  | -4865.98
+4  |  66.2  |  69.66 | 10.29  | 5.76  | 0.49  | 0.51  | -4865.62
+5  |  66.19 |  69.68 | 10.28  | 5.65  | 0.49  | 0.51  | -4865.38
+6  |  66.18 |  69.7  | 10.25  | 5.57  | 0.49  | 0.51  | -4865.21
+7  |  66.17 |  69.72 | 10.2   | 5.51  | 0.49  | 0.51  | -4865.07
+8  |  66.16 |  69.73 | 10.16  | 5.45  | 0.49  | 0.51  | -4864.96
+9  |  66.15 |  69.75 | 10.11  | 5.41  | 0.49  | 0.51  | -4864.86
 
-Example
+Enter test height: 67
 
-| Iteration | μ1 | μ2 | Var1 | Var2 | π1 | π2 | Log-Likelihood |
-|-----------|----|----|------|------|----|----|----------------|
-| 0 | Initial | Initial | Initial | Initial | 0.5 | 0.5 | Initial |
-| 1 | Updated | Updated | Updated | Updated | Updated | Updated | Improved |
-| 2 | Updated | Updated | Updated | Updated | Updated | Updated | Improved |
-
-This table demonstrates how EM gradually improves its estimates.
-
+Prediction for: 67.0
+Child probability: 58.07 %
+Parent probability: 41.93 %
 ---
 
 # Prediction
