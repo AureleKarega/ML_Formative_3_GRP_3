@@ -391,7 +391,7 @@ Enter test height: 67
 
 Prediction for: 67.0
 Child probability: 58.07 %
-Parent probability: 41.93 %
+Father probability: 41.93 %
 ---
 
 # Running the Project
