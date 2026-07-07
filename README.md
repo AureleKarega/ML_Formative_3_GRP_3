@@ -1,4 +1,4 @@
-# Expectation-Maximization (EM) Algorithm for Gaussian Mixture Models
+# PART 1 : Expectation-Maximization (EM) Algorithm for Gaussian Mixture Models
 ### Probability Formative Assessment
 
 ## Overview
