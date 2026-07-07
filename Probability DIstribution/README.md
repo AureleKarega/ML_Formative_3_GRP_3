@@ -385,36 +385,6 @@ Child probability: 58.07 %
 Parent probability: 41.93 %
 ---
 
-# Prediction
-
-After training, the model predicts the probability that a new height belongs to each group.
-
-Example
-
-```
-Enter test height:
-
-69
-```
-
-Possible output
-
-```
-Prediction for: 69
-
-Child probability:
-
-27.54 %
-
-Parent probability:
-
-72.46 %
-```
-
-Rather than assigning a hard label, the model outputs posterior probabilities.
-
----
-
 # Running the Project
 
 ## Requirements
